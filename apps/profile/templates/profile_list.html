@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Profile: {{ profile.full_name }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<h2>Profile List</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th><th>Name</th>
+    </tr>
+    {% for profile in profiles %}
+        <tr>
+            <td><a href="{{ site_root}}/profile/get/{{ profile.id }}/">{{ profile.id }}</a></td>
+            <td>{{ profile.full_name }}</td>
+        </tr>
+    {% endfor %}
+    </thead>
+</table>
+{% endblock %}

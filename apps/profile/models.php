@@ -24,3 +24,7 @@ function get_profile_for_id($id){
     }
     return $profile_array;
 }
+
+function get_all_profiles(){
+    return Profile::all();
+}

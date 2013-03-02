@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 
-{% block title %}Userlist | {{ block.super }}{% endblock %}
+{% block title %}Profile: {{ profile.full_name }} | {{ block.super }}{% endblock %}
 
 {% block content %}
 <h2>{{ profile.full_name }} {% if profile.nick_name %}({{ profile.nick_name }}) {% endif %}</h2>
