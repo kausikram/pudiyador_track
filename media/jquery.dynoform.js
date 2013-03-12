@@ -11,7 +11,7 @@
 
     DynoForm.prototype.setFormAttrs = function () {
         for (var key in this.form_structure) {
-            if($.inArray(key,["fields", "submit"]) === -1) {
+            if($.inArray(key,["fields", "submit", "values"]) === -1) {
                 this.$form.attr(key, this.form_structure[key]);
             }
         }
@@ -64,6 +64,14 @@
         }
     };
 
+    DynoForm.prototype.updateValues = function () {
+        if(this.form_structure["values"]) {
+            for(var key in this.form_structure["values"]){
+                this.$form.find("[name='" + key +"']").val(this.form_structure["values"][key]);
+            }
+        }
+    };
+
     DynoForm.prototype.createActionButtons = function () {
         var submit_button = jQuery("<input>");
         submit_button.attr("type","submit")
@@ -79,10 +87,12 @@
         }
     };
 
+
     DynoForm.prototype.renderForm = function(){
         this.$form = $("<form>");
         this.setFormAttrs();
         this.updateFormFields();
+        this.updateValues();
         this.createActionButtons();
         this.$element.append(this.$form);
     };

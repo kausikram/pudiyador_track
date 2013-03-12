@@ -31,6 +31,9 @@
             }
          ]
     };
+    {% if values %}
+        form["values"] = JSON.parse('{{ values | safe }}');
+    {% endif %}
     jQuery(document).ready(function(){
         jQuery(".ergo").dynoForm({"form_structure":form});
     })

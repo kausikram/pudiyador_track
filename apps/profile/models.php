@@ -19,6 +19,21 @@ function create_profile($full_name, $properties){
     }
 }
 
+function edit_profile($id, $full_name, $properties){
+    $profile = Profile::find($id);
+    if($profile->full_name != $full_name){
+        $profile->full_name = $full_name;
+        $profile->save();
+    }
+    $profile_properties = ProfileProperty::find('all', array('conditions' => array('profile_id = ?', $id)));
+    foreach($profile_properties as $prop){
+        if($prop->value != $properties[$prop->key]){
+            $prop->value = $properties[$prop->key];
+            $prop->save();
+        }
+    }
+}
+
 function get_profile_for_id($id){
     $profile = Profile::find($id);
     $profile_properties = ProfileProperty::find('all', array('conditions' => array('profile_id = ?', $id)));
