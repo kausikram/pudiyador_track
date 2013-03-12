@@ -3,7 +3,8 @@ namespace apps\profile\urls;
 
 function get_urls() {
     $patterns = array();
-    $patterns["get/(?P<profile_id>[^/]+)/$"] = array("controller"=>"\\apps\\profile\\controllers\\get_profile");
-    $patterns["all/$"] = array("controller"=>"\\apps\\profile\\controllers\\all_profile");
+    $patterns["all/$"] = array("controller"=>"\\apps\\profile\\controllers\\all_profile", "secure"=>true);
+    $patterns["get/(?P<profile_id>[^/]+)/$"] = array("controller"=>"\\apps\\profile\\controllers\\get_profile", "secure"=>true);
+    $patterns["create/$"] = array("controller"=>"\\apps\\profile\\controllers\\create_profile");
     return $patterns;
 }

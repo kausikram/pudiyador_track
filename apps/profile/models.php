@@ -11,6 +11,14 @@ class ProfileProperty extends \ActiveRecord\Model {
 }
 
 
+function create_profile($full_name, $properties){
+    $profile = Profile::create(array("full_name"=>$full_name));
+    $profile_id = $profile->id;
+    foreach($properties as $k=>$v){
+        ProfileProperty::create(array("profile_id"=>$profile_id, "key"=>$k, "value"=>$v));
+    }
+}
+
 function get_profile_for_id($id){
     $profile = Profile::find($id);
     $profile_properties = ProfileProperty::find('all', array('conditions' => array('profile_id = ?', $id)));

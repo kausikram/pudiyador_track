@@ -41,6 +41,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="{{ site_root }}/profile/all/">All Profiles</a></li>
+                <li><a href="{{ site_root }}/profile/create/">Create Profile</a></li>
               <!--<li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>-->
             </ul>
@@ -57,6 +58,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ media_root }}/jquery.js"></script>
+    <script src="{{ media_root }}/jquery.dynoform.js"></script>
     <script src="{{ media_root }}/bootstrap/js/bootstrap.min.js"></script>
+    {% block script %}
+    {% endblock %}
   </body>
 </html>

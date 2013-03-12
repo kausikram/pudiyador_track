@@ -5,6 +5,7 @@
     var form = {
         "name" : "blah",
         "id" : "blah",
+        "submit":"Save",
         "method":"POST",
         "action":".",
         "fields" : [
@@ -16,7 +17,12 @@
             {
                 "name": "nick_name",
                 "label":"Nick Name",
-                "type":"password"
+                "type":"text"
+            },
+            {
+                "name": "age",
+                "label":"Age",
+                "type":"text"
             },
             {
                 "name": "address",
@@ -36,6 +42,5 @@
 {% block content %}
 <h2>Pudiyador Track (beta)</h2>
 <div class="ergo">
-    Ergo Ipso Facto Colombo Oreo.
 </div>
 {% endblock %}

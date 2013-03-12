@@ -12,6 +12,23 @@ function all_profile($req) {
 
 }
 
+function create_profile($req) {
+    //$profile = include __DIR__ . "/profile_fixture.php";
+    if($req->method()=="GET"){
+        echo \apps\utils\render_to_response('page.html', __DIR__."/templates/", array(), array());
+    } else {
+        if($req->has_errors()){
+            print "Hey there were errors on this form!!";
+        } else {
+            $props = $req->all_posts();
+            unset($props["full_name"]);
+            \apps\profile\models\create_profile($req->post("full_name"), $props);
+            print "HEY i saved the data all is well";
+
+        }
+    }
+}
+
 function get_profile($req) {
     //$profile = include __DIR__ . "/profile_fixture.php";
     $profile = \apps\profile\models\get_profile_for_id($req->param("profile_id"));
