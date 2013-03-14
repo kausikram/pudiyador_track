@@ -38,6 +38,18 @@
             el = jQuery("<input>");
             el.attr("type","password");
             break;
+
+        case "select":
+            el = jQuery("<select>");
+            var option;
+            for(var key in field_map["options"]){
+                option = jQuery("<option>");
+                option.attr("value", field_map["options"][key][1]);
+                option.text(field_map["options"][key][0]);
+                el.append(option);
+            }
+            break;
+
         }
         el.attr("name", field_map["name"]);
         return el;

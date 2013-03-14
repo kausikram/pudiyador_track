@@ -2,7 +2,7 @@
 
 $config = array();
 
-$config["base_uri_component"] = "/pudiyador_track/index.php";
+$config["base_uri_component"] = "http://localhost/pudiyador_track/index.php"; #No Trailing Slashes
 $config["base_url_namespace"] = "\\apps\\urls";
 
 $config["media_root"] = "/pudiyador_track/media";
