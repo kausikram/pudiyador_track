@@ -8,12 +8,17 @@
 <table class="table">
     <thead>
     <tr>
-        <th>ID</th><th>Name</th>
+        <th>ID</th><th>Name</th><th>Options</th>
     </tr>
     {% for profile in profiles %}
         <tr>
             <td><a href="{{ site_root}}/profile/get/{{ profile.id }}/">{{ profile.id }}</a></td>
             <td>{{ profile.full_name }}</td>
+            <td>
+                <a class="btn btn-primary" href="{{ site_root}}/profile/edit/{{ profile.id }}/">Profile</a>
+                <a class="btn btn-primary" href="{{ site_root}}/profile/edit/{{ profile.id }}/">Psycological Analysis</a>
+                <a class="btn btn-primary" href="{{ site_root}}/profile/edit/{{ profile.id }}/">Health Details</a>
+            </td>
         </tr>
     {% endfor %}
     </thead>

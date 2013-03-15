@@ -5,43 +5,122 @@
     var form = {
         "name" : "blah",
         "id" : "blah",
-        "submit":"Save",
         "method":"POST",
-        "action":".",
-        "fields" : [
-            {
-                "name":"full_name",
-                "label": "Full Name",
-                "type": "text"
-            },
-            {
-                "name": "nick_name",
-                "label":"Nick Name",
-                "type":"text"
-            },
-            {
-                "name": "age",
-                "label":"Age",
-                "type":"text"
-            },
-            {
-                "name": "address",
-                "label":"Address",
-                "type": "textarea"
-            },
-            {
-                "center": "center",
-                "label":"Center",
-                "type": "select",
-                "options": [["Urur Kuppam","pu"], ["Vanandurai","pv"], ["Saligramam","ps"], ["Ramapuram","pr"]]
-            }
-         ]
+        "action":"."
     };
+    var fields = [
+        {
+            "name":"full_name",
+            "label": "Full Name",
+            "type": "text"
+        },
+        {
+            "name": "nick_name",
+            "label":"Nick Name",
+            "type":"text"
+        },
+        {
+            "name": "center",
+            "label":"Center",
+            "type": "select",
+            "options": [["Urur Kuppam","pu"], ["Vanandurai","pv"], ["Saligramam","ps"], ["Ramapuram","pr"]]
+        },
+        {
+            "name": "date_of_birth",
+            "label":"Date of Birth",
+            "type":"text"
+        },
+        {
+            "name": "date_of_joining",
+            "label":"Date of Joining",
+            "type":"text"
+        },
+        {
+            "name": "school_name",
+            "label":"School",
+            "type": "text"
+        },
+        {
+            "name": "class",
+            "label":"Class Studying Currently",
+            "type": "text"
+        },
+        {
+            "name": "contact_phone",
+            "label":"Contact Number",
+            "type": "text"
+        },
+        {
+            "name": "address",
+            "label":"Address",
+            "type": "textarea"
+        },
+        {
+            "name": "fathers_name",
+            "label":"Father's Name",
+            "type": "text"
+        },
+        {
+            "name": "fathers_age",
+            "label":"Father's Age",
+            "type": "text"
+        },
+        {
+            "name": "mothers_name",
+            "label":"Mother's Name",
+            "type": "text"
+        },
+        {
+            "name": "mothers_age",
+            "label":"Mother's Age",
+            "type": "text"
+        },
+        {
+            "name": "family_income",
+            "label":"Family Income Per Month",
+            "type": "text"
+        },
+        {
+            "name": "family_background",
+            "label":"Family Background",
+            "type": "textarea"
+        },
+        {
+            "name": "height",
+            "label":"Height",
+            "type": "text"
+        },
+        {
+            "name": "weight",
+            "label":"Weight",
+            "type": "text"
+        },
+        {
+            "name": "health_condition",
+            "label":"Health Conditions",
+            "type": "textarea"
+        }
+    ];
+
+    var buttons = [
+        {
+            "type":"submit",
+            "class":"btn btn-primary",
+            "value":"Save"
+        },
+        {
+            "type":"reset",
+            "class":"btn",
+            "value": "Clear"
+        }
+    ];
+
+    var values = {};
     {% if values %}
-        form["values"] = JSON.parse('{{ values | safe }}');
+        values = JSON.parse('{{ values | safe }}');
     {% endif %}
     jQuery(document).ready(function(){
-        jQuery(".ergo").dynoForm({"form_structure":form});
+        jQuery(".ergo").dynoForm({"form":form, "fields":fields, "values": values, "buttons":buttons});
     })
 </script>
 {% endblock %}

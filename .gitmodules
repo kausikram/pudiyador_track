@@ -1,3 +1,6 @@
 [submodule "resources/merlin"]
 	path = resources/merlin
 	url = git@github.com:kausikram/Merlin.git
+[submodule "media/dynoforms"]
+	path = media/dynoforms
+	url = git@github.com:kausikram/jquery.dynoforms.git
