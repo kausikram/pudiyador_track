@@ -12,5 +12,6 @@ $config["middlewares"]= array(
     //"\merlin\\middlewares\\validation"
 );
 
+$config["basic_auth_pairs"] = array("admin"=>"123vsdof23534-486bf52e1fa435d039e8364b206d1496635c8145");
 $config["404_page"] = __DIR__."/apps/utils/templates/404_page.html";
 
