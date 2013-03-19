@@ -6,4 +6,4 @@ Pudiyador Track is WIP.
 Pudiyador Track uses Merlin, PHPActiveRecord and H20 Template Engine.
 
 ### Licenses
-Pudiyador is released under a BSD license. You can play all you want. Feel free to contribute or buy me food.
+Pudiyador Track is released under a BSD license. You can play all you want. Feel free to contribute or buy me food.
