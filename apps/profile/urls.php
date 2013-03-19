@@ -27,6 +27,7 @@ function get_urls() {
 
     $patterns["create/$"] = array(
         "controller"=>"\\apps\\profile\\controllers\\create_profile",
+        "secure"=>true,
         "name"=>"create_profile");
     return $patterns;
 }

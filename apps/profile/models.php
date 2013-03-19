@@ -29,8 +29,12 @@ function edit_profile($id, $full_name, $properties){
     foreach($profile_properties as $prop){
         if($prop->value != $properties[$prop->key]){
             $prop->value = $properties[$prop->key];
+            unset($properties[$prop->key]);
             $prop->save();
         }
+    }
+    foreach($properties as $k=>$v){
+        ProfileProperty::create(array("profile_id"=>$id, "key"=>$k, "value"=>$v));
     }
 }
 

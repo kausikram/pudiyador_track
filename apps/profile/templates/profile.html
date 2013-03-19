@@ -4,9 +4,58 @@
 {% block title %}Profile: {{ profile.full_name }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-<h2>{{ profile.full_name }} {% if profile.nick_name %}({{ profile.nick_name }}) {% endif %}</h2>
-<dl class="dl-horizontal">
-  <dt>Age</dt>
-  <dd>{{ profile.age }}</dd>
-</dl>
+<h3>{{ profile.full_name }} {% if profile.nick_name %}({{ profile.nick_name }}) {% endif %}</h3>
+<a class="btn btn-primary" href="{{ site_root }}/profile/edit/{{ profile.id }}/">Edit</a>
+<div class="row">
+    <div class="span6">
+        <h4>Personal Details</h4>
+        <dl class="dl-horizontal">
+            <dt>Full Name</dt>
+            <dd>{{ profile.full_name }}</dd>
+            <dt>Nick Name</dt>
+            <dd>{{ profile.nick_name }}</dd>
+            <dt>Date of Birth</dt>
+            <dd>{{ profile.date_of_birth }}</dd>
+            <dt>Age</dt>
+            <dd>{{ profile.age }}</dd>
+        </dl>
+    </div>
+    <div class="span6">
+        <h4>Pudiyador Admin</h4>
+        <dl class="dl-horizontal">
+            <dt>ID</dt>
+            <dd>{{ profile.id }}</dd>
+            <dt>Center</dt>
+            <dd>{{ profile.center }}</dd>
+            <dt>Date of Joining</dt>
+            <dd>{{ profile.date_of_joining }}</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span6">
+        <h4>Contact Details</h4>
+        <dl class="dl-horizontal">
+            <dt>Contact Number</dt>
+            <dd>{{ profile.contact_phone }}</dd>
+            <dt>Address</dt>
+            <dd>{{ profile.address }}</dd>
+        </dl>
+    </div>
+    <div class="span6">
+        <h4>Family Background</h4>
+        <dl class="dl-horizontal">
+            <dt>Fathers Name (Age)</dt>
+            <dd>{{ profile.fathers_name }}({{ profile.fathers_age }})</dd>
+            <dt>Mothers Name (Age)</dt>
+            <dd>{{ profile.mothers_name }}({{ profile.mothers_age }})</dd>
+            <dt>Monthly Family Income</dt>
+            <dd>{{ profile.family_income }}</dd>
+            <dt>Note</dt>
+            <dd>{{ profile.family_background }}</dd>
+        </dl>
+    </div>
+</div>
+
 {% endblock %}

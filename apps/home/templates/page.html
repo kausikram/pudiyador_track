@@ -2,32 +2,6 @@
 
 {% block script %}
 <script type="text/javascript">
-    var form = {
-        "name" : "blah",
-        "id" : "blah",
-        "method":"POST",
-        "action":".",
-        "fields" : [
-            {
-                "name":"full_name",
-                "label": "Full Name",
-                "type": "text"
-            },
-            {
-                "name": "nick_name",
-                "label":"Nick Name",
-                "type":"password"
-            },
-            {
-                "name": "address",
-                "label":"Address",
-                "type": "textarea"
-            }
-         ]
-    };
-    jQuery(document).ready(function(){
-        jQuery(".ergo").dynoForm({"form_structure":form});
-    })
 </script>
 {% endblock %}
 
