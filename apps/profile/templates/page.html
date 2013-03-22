@@ -117,11 +117,15 @@
     ];
 
     var values = {};
+    var errors = {};
     {% if values %}
         values = JSON.parse('{{ values | safe }}');
     {% endif %}
+    {% if errors %}
+        errors = JSON.parse('{{ errors | safe }}');
+    {% endif %}
     jQuery(document).ready(function(){
-        jQuery(".ergo").dynoForm({"form":form, "fields":fields, "values": values, "buttons":buttons, "fieldsets":fieldsets});
+        jQuery(".ergo").dynoForm({"form":form, "fields":fields, "values": values, "buttons":buttons, "fieldsets":fieldsets, "errors": errors});
     })
 </script>
 {% endblock %}

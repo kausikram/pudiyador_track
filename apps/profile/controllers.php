@@ -18,11 +18,13 @@ function create_profile($req) {
         \apps\utils\render_to_response('page.html', __DIR__."/templates/", array(), array());
     } else {
         if($req->has_errors()){
-            print "Hey there were errors on this form!!";
+            $values = json_encode($req->all_posts());
+            $errors= json_encode($req->all_errors());
+            \apps\utils\render_to_response('page.html', __DIR__."/templates/", array("values"=>$values, "errors"=>$errors), array());
         } else {
             $props = $req->all_posts();
             unset($props["full_name"]);
-            \apps\profile\models\create_profile($req->post("full_name"), $props);
+            //\apps\profile\models\create_profile($req->post("full_name"), $props);
             print \merlin\urls\get_url_by_name("view_all_profiles", array());
             //\merlin\utils\redirect();
         }

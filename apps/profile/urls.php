@@ -28,6 +28,7 @@ function get_urls() {
     $patterns["create/$"] = array(
         "controller"=>"\\apps\\profile\\controllers\\create_profile",
         "secure"=>true,
+        "validation"=>"\\apps\\profile\\validation\\profile_validator",
         "name"=>"create_profile");
     return $patterns;
 }

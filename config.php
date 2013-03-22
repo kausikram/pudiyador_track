@@ -8,8 +8,9 @@ $config["base_url_namespace"] = "\\apps\\urls";
 $config["media_root"] = "/pudiyador_track/media";
 
 $config["middlewares"]= array(
-    "\\merlin\\middlewares\\basic_auth_middleware" # Ensure you set the basic auth usernames and its md5ed passwords below
-    //"\merlin\\middlewares\\validation"
+    #"\\merlin\\middlewares\\session_middleware",  #Loads session variables
+    "\\merlin\\middlewares\\basic_auth_middleware", # Ensure you set the basic auth usernames and its SHA11es passwords below
+    "\\merlin\\middlewares\\validation_middleware"
 );
 
 $config["basic_auth_pairs"] = array("admin"=>"123vsdof23534-486bf52e1fa435d039e8364b206d1496635c8145");
