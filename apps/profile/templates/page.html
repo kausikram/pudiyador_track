@@ -8,7 +8,7 @@
         "method":"POST",
         "action":"."
     };
-    var fieldsets = [["Personal Details", "personal", {}], ["Education", "education", {}], ["Background Details", "background", {}], ["Pudiyador Internal", "pudiyador", {}]];
+    var fieldsets = [["Personal Details", "personal", {}], ["Contact Details", "contacts", {}], ["Education", "education", {}], ["Background Details", "background", {}], ["Pudiyador Internal", "pudiyador", {}]];
     var fields = [
         {
             "name":"full_name",
@@ -119,13 +119,26 @@
     var values = {};
     var errors = {};
     {% if values %}
-        values = JSON.parse('{{ values | safe }}');
+    values = JSON.parse('{{ values | safe }}');
     {% endif %}
     {% if errors %}
         errors = JSON.parse('{{ errors | safe }}');
     {% endif %}
     jQuery(document).ready(function(){
-        jQuery(".ergo").dynoForm({"form":form, "fields":fields, "values": values, "buttons":buttons, "fieldsets":fieldsets, "errors": errors});
+        jQuery(".ergo").dynoForm({
+            "form":form,
+            "fields":fields,
+            "values": values,
+            "buttons":buttons,
+            "fieldsets":fieldsets,
+            "errors": errors,
+            "error_template":function(msg){
+                var $div = jQuery("<div>");
+                $div.addClass("alert alert-error");
+                $div.html(msg);
+                return $div;
+            }
+        });
     })
 </script>
 {% endblock %}
