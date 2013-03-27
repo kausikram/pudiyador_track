@@ -53,7 +53,19 @@
             <dt>Monthly Family Income</dt>
             <dd>{{ profile.family_income }}</dd>
             <dt>Note</dt>
-            <dd>{{ profile.family_background }}</dd>
+            <dd>{{ profile.family_background | nl2br | safe }}</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span6">
+        <h4>Education</h4>
+        <dl class="dl-horizontal">
+            <dt>School Name</dt>
+            <dd>{{ profile.school_name }}</dd>
+            <dt>Class</dt>
+            <dd>{{ profile.class }}</dd>
         </dl>
     </div>
 </div>
