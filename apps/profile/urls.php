@@ -30,5 +30,13 @@ function get_urls() {
         "secure"=>true,
         "validation"=>"\\apps\\profile\\validation\\profile_validator",
         "name"=>"create_profile");
+
+    $patterns["profile_form/$"] = array(
+        "controller"=>"\\merlin\\generic\\controllers\\direct_file_response",
+        "secure"=>true,
+        "filename" => __DIR__ . "/profile_form.json",
+        "additional_headers" => array("Content-type: application/json"),
+        "name"=>"profile_form");
+
     return $patterns;
 }

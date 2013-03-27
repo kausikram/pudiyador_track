@@ -1,0 +1,125 @@
+{
+    "form" : {
+        "name":"profile_form",
+        "id":"profile_form",
+        "method":"POST",
+        "action":"."
+    },
+    "fieldsets" : [
+        ["Personal Details","personal",{}],
+        ["Contact Details","contacts",{}],
+        ["Education","education",{}],
+        ["Background Details","background",{}],
+        ["Pudiyador Internal","pudiyador",{}]
+    ],
+    "fields" : [
+        {
+            "name":"full_name",
+            "label":"Full Name",
+            "fieldset":"personal",
+            "type":"text"
+        },
+        {
+            "name":"nick_name",
+            "fieldset":"personal",
+            "label":"Nick Name",
+            "type":"text"
+        },
+        {
+            "name":"center",
+            "label":"Center",
+            "fieldset":"pudiyador",
+            "type":"select",
+            "options":[
+                ["Urur Kuppam","pu"],
+                ["Vanandurai","pv"],
+                ["Saligramam","ps"],
+                ["Ramapuram","pr"]
+            ]
+        },
+        {
+            "name":"date_of_birth",
+            "fieldset":"personal",
+            "label":"Date of Birth",
+            "type":"text"
+        },
+        {
+            "name":"date_of_joining",
+            "fieldset":"pudiyador",
+            "label":"Date of Joining",
+            "type":"text"
+        },
+        {
+            "name":"school_name",
+            "fieldset":"education",
+            "label":"School",
+            "type":"text"
+        },
+        {
+            "name":"class",
+            "fieldset":"education",
+            "label":"Class Studying Currently",
+            "type":"text"
+        },
+        {
+            "name":"contact_phone",
+            "fieldset":"contacts",
+            "label":"Contact Number",
+            "type":"text"
+        },
+        {
+            "name":"address",
+            "fieldset":"contacts",
+            "label":"Address",
+            "type":"textarea"
+        },
+        {
+            "name":"fathers_name",
+            "fieldset":"background",
+            "label":"Father's Name",
+            "type":"text"
+        },
+        {
+            "name":"fathers_age",
+            "fieldset":"background",
+            "label":"Father's Age",
+            "type":"text"
+        },
+        {
+            "name":"mothers_name",
+            "fieldset":"background",
+            "label":"Mother's Name",
+            "type":"text"
+        },
+        {
+            "name":"mothers_age",
+            "fieldset":"background",
+            "label":"Mother's Age",
+            "type":"text"
+        },
+        {
+            "name":"family_income",
+            "fieldset":"background",
+            "label":"Family Income Per Month",
+            "type":"text"
+        },
+        {
+            "name":"family_background",
+            "fieldset":"background",
+            "label":"Family Background",
+            "type":"textarea"
+        }
+    ],
+    "buttons" : [
+        {
+            "type":"submit",
+            "class":"btn btn-primary",
+            "value":"Save"
+        },
+        {
+            "type":"reset",
+            "class":"btn",
+            "value":"Clear"
+        }
+    ]
+}
