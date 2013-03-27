@@ -11,6 +11,17 @@
         errors = JSON.parse('{{ errors | safe }}');
     {% endif %}
     jQuery(document).ready(function(){
+        jQuery(".ergo").on("dynoform:render_complete", function(ev,config){
+            var rules = {};
+            for(var index in config["fields"]){
+                var field = config["fields"][index];
+                rules[field["name"]] = field["rules"] || {};
+            }
+            jQuery(".ergo form").validate({
+                rules : rules,
+                errorClass:"alert alert-error"
+            });
+        });
         jQuery(".ergo").dynoForm({
             "remote_form_structure" : "{{ site_root }}/profile/profile_form/",
             "values": values,
@@ -22,7 +33,7 @@
                 return $div;
             }
         });
-    })
+    });
 </script>
 {% endblock %}
 

@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 
 
-{% block title %}Profile: {{ profile.full_name }} | {{ block.super }}{% endblock %}
+{% block title %}All Profile | {{ block.super }}{% endblock %}
 
 {% block content %}
 <h2>Profile List</h2>
 <table class="table">
     <thead>
     <tr>
-        <th>ID</th><th>Name</th><th>Update</th>
+        <th>ID</th><th>Name</th><th>Center</th><th>Update</th>
     </tr>
     {% for profile in profiles %}
         <tr>
             <td><a href="{{ site_root}}/profile/get/{{ profile.id }}/">{{ profile.id }}</a></td>
-            <td>{{ profile.full_name }}</td>
+            <td>{{ profile.full_name }}
+            {% if profile.nick_name %}
+                ({{ profile.nick_name }})
+            {% endif %}
+            </td>
+            <td>{{ profile.center }}</td>
             <td>
                     <div class="btn-group">
                         <a class="btn" href="{{ site_root}}/profile/edit/{{ profile.id }}/"><i class="icon-pencil"></i></a>

@@ -17,7 +17,11 @@
             "name":"full_name",
             "label":"Full Name",
             "fieldset":"personal",
-            "type":"text"
+            "type":"text",
+            "required":true,
+            "rules":{
+                "required":true
+            }
         },
         {
             "name":"nick_name",

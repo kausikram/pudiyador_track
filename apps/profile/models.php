@@ -25,14 +25,16 @@ function edit_profile($id, $full_name, $properties){
         $profile->full_name = $full_name;
         $profile->save();
     }
+    var_dump($properties);
     $profile_properties = ProfileProperty::find('all', array('conditions' => array('profile_id = ?', $id)));
     foreach($profile_properties as $prop){
         if($prop->value != $properties[$prop->key]){
             $prop->value = $properties[$prop->key];
-            unset($properties[$prop->key]);
             $prop->save();
         }
+        unset($properties[$prop->key]);
     }
+    var_dump($properties);
     foreach($properties as $k=>$v){
         ProfileProperty::create(array("profile_id"=>$id, "key"=>$k, "value"=>$v));
     }
