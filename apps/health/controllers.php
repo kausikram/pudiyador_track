@@ -21,7 +21,6 @@ function create_health_record($req) {
 }
 
 function get_all_health_records($req) {
-    //$profile = include __DIR__ . "/profile_fixture.php";
     $profile = \apps\profile\models\get_profile_for_id($req->param("profile_id"));
     $records = \apps\health\models\get_health_record_for_id($req->param("profile_id"));
 
@@ -40,7 +39,7 @@ function get_all_health_records($req) {
     }
 
     if($req->urlconfig("return_data_type")=="json"){
-        \apps\utils\json_response(array('profile'=>$profile));
+        \apps\utils\json_response(array('profile'=>$profile, 'records'=>$ordered_record));
     }
     \apps\utils\render_to_response('health_profile.html', __DIR__."/templates/", array(
         'profile' => $profile,
