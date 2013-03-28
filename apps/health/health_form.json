@@ -1,0 +1,48 @@
+{
+    "form" : {
+        "name":"health_form",
+        "id":"health_form",
+        "method":"POST",
+        "action":"."
+    },
+    "fieldsets" : [
+        ["Health Record","health",{}]
+    ],
+    "fields" : [
+        {
+            "name":"height",
+            "label":"Height",
+            "fieldset":"health",
+            "type":"text",
+            "required":true,
+            "rules":{
+                "required":true,
+                "integer":true
+            }
+        },
+        {
+            "name":"weight",
+            "fieldset":"health",
+            "label":"Weight",
+            "type":"text"
+        },
+        {
+            "name":"medical_history",
+            "fieldset":"health",
+            "label":"Known Medical History",
+            "type":"textarea"
+        }
+    ],
+    "buttons" : [
+        {
+            "type":"submit",
+            "class":"btn btn-primary",
+            "value":"Save"
+        },
+        {
+            "type":"reset",
+            "class":"btn",
+            "value":"Clear"
+        }
+    ]
+}

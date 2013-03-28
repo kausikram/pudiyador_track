@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block script %}
+<script type="text/javascript">
+    var values = {};
+    var errors = {};
+    {% if values %}
+    values = JSON.parse('{{ values | safe }}');
+    {% endif %}
+    {% if errors %}
+        errors = JSON.parse('{{ errors | safe }}');
+    {% endif %}
+    jQuery(document).ready(function(){
+        jQuery(".ergo").on("dynoform:render_complete", function(ev,config){
+            var rules = {};
+            for(var index in config["fields"]){
+                var field = config["fields"][index];
+                rules[field["name"]] = field["rules"] || {};
+            }
+            jQuery(".ergo form").validate({
+                rules : rules,
+                errorClass:"alert alert-error"
+            });
+        });
+        jQuery(".ergo").dynoForm({
+            "remote_form_structure" : "{{ site_root }}/health/health_record_form/",
+            "values": values,
+            "errors": errors,
+            "error_template":function(msg){
+                var $div = jQuery("<div>");
+                $div.addClass("alert alert-error");
+                $div.html(msg);
+                return $div;
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+{% block title %}Add Health Record | {{ block.super }}{% endblock %}
+
+{% block content %}
+<h2>Pudiyador Track (beta)</h2>
+<div class="ergo">
+</div>
+{% endblock %}
