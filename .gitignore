@@ -1,3 +1,4 @@
 .idea
 config.production.php
+index.production.php
 *\h2o_*
