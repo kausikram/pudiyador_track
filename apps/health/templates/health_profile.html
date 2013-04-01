@@ -9,13 +9,15 @@
     {% for record in records %}
     <div class="row">
         <div class="span6">
-            <h5>{{ record.date }}</h5>
-            <dl class="dl-horizontal">
-                {% for item in record.records %}
-                    <dt>{{ item.key }}</dt>
-                    <dd>{{ item.value }}</dd>
-                {% endfor %}
-            </dl>
+            <div class="health_box">
+                <span class="heading">{{ record.date }}</span>
+                <dl>
+                    {% for item in record.records %}
+                        <dt>{{ item.key }}</dt>
+                        <dd>{{ item.value }}</dd>
+                    {% endfor %}
+                </dl>
+            </div>
         </div>
     </div>
 {% endfor %}
