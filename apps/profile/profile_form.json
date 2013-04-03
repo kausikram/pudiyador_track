@@ -30,6 +30,13 @@
             "type":"text"
         },
         {
+            "name":"gender",
+            "fieldset":"personal",
+            "label":"Gender",
+            "type":"select",
+            "options":[["Male", "male"], ["Female", "female"]]
+        },
+        {
             "name":"center",
             "label":"Center",
             "fieldset":"pudiyador",
