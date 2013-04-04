@@ -17,6 +17,8 @@ require("apps/utils/init.php");
 require("apps/home/init.php");
 require("apps/profile/init.php");
 require("apps/health/init.php");
+require("apps/psych/init.php");
+
 
 $config_file_path = __DIR__ . "/config.php";
 

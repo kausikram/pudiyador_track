@@ -1,0 +1,37 @@
+{
+    "form" : {
+        "name":"psych_form",
+        "id":"psych_form",
+        "method":"POST",
+        "action":"."
+    },
+    "fieldsets" : [
+        ["Psychiatric Record","health",{}]
+    ],
+    "fields" : [
+        {
+            "name":"observation",
+            "fieldset":"health",
+            "label":"Observation",
+            "type":"textarea"
+        },
+        {
+            "name":"action_points",
+            "fieldset":"health",
+            "label":"Action Points",
+            "type":"textarea"
+        }
+    ],
+    "buttons" : [
+        {
+            "type":"submit",
+            "class":"btn btn-primary",
+            "value":"Save"
+        },
+        {
+            "type":"reset",
+            "class":"btn",
+            "value":"Clear"
+        }
+    ]
+}

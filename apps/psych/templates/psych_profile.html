@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Profile: {{ profile.full_name }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<h3>Counselling Record : {{ profile.full_name }}</h3>
+<a class="btn btn-primary" href="{{ site_root }}/psych/create/{{ profile.id }}/">Add Entry</a>
+    {% for record in records %}
+    <div class="row">
+        <div class="span12">
+            <div class="psych_box">
+                <span class="heading">{{ record.date | date "d M, Y" }}</span>
+                <div class="row">
+                    <div class="span5">
+                        <h5>Observation</h5>
+                        {{ record.observation }}
+                    </div>
+                    <div class="span5">
+                        <h5>Action Points</h5>
+                        {{ record.action_points }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

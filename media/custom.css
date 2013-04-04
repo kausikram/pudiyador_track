@@ -1,4 +1,4 @@
-.health_box{
+.health_box, .psych_box{
     position: relative;
     margin: 15px 0;
     padding: 39px 19px 14px;
@@ -9,7 +9,7 @@
     border-radius: 4px;
 }
 
-.health_box .heading {
+.health_box .heading, .psych_box .heading {
     position: absolute;
     top: -1px;
     left: -1px;
